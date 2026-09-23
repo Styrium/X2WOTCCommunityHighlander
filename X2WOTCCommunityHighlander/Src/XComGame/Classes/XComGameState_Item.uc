@@ -205,7 +205,7 @@ function OnBeginTacticalPlay(XComGameState NewGameState)
 	
 	// Start Issue #1624
 	// Add in extra call of GetClipSize(), but only if it isn't a tactical<>tactical transfer
-	BattleData = XComGameState_BattleData(History.GetSingleGameStateObjectForClass(class'XComGameState_BattleData'));
+	BattleData = XComGameState_BattleData(`XCOMHISTORY.GetSingleGameStateObjectForClass(class'XComGameState_BattleData'));
 	if (
 		!(BattleData.DirectTransferInfo.IsDirectMissionTransfer 
 		&& BattleData.DirectTransferInfo.TransferredUnitStats.Find('UnitStateRef', OwnerStateObject) != INDEX_NONE))
